@@ -8,7 +8,7 @@ Este repositório tem o objetivo de fornecer conteúdo educacional e ferramentas
 
 Este repositório está protegido por licença proprietária, o que significa que qualquer conteúdo do repositório, como código, texto, imagens ou qualquer material presente, não pode ser copiado, distribuído ou utilizado comercialmente sem a permissão explícita do proprietário.
 
-Proibido realizar:
+## Proibido realizar:
 
 - Copiar, duplicar ou redistribuir qualquer conteúdo.
 
@@ -18,7 +18,7 @@ Proibido realizar:
 
 - Utilizar o conteúdo para fins comerciais.
 
-Permitido:
+## Permitido:
 
 - Ler e visualizar o conteúdo exclusivamente dentro do GitHub.
 
