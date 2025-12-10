@@ -23,7 +23,7 @@
 ---
 
 
-<h1 align="center">📘 O Guia dos Guri</h1>
+<h1 align="center">📘 O Wiki dos Guri</h1>
 
 ### `Não sou vendedor de curso, sou apenas alguém que quer compartilhar o que aprendeu gratuitamente. O objetivo é ajudar, ensinar, e proporcionar a outros o mesmo acesso ao conhecimento que eu tive.`
 
