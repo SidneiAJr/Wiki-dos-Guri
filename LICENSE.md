@@ -3,7 +3,6 @@
 Este conteúdo está licenciado sob a **Licença Creative Commons - Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0)**. Você pode:
 
 - **Compartilhar** — copiar e redistribuir o material em qualquer meio ou formato.
-- **Adaptar** — remixer, transformar e construir a partir do material, **mas somente para fins não comerciais**.
 
 ## Sob as seguintes condições:
 
