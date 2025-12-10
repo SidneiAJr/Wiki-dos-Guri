@@ -65,3 +65,9 @@
 | Pos : Fisica            | 
 
 ***Aqui você encontra de tudo um pouco — desde Hardware e Computação até Matemática Financeira.***
+
+## Sumario:
+
+- [Programação](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Programacao)
+- [Experiencia de TI](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Experiencia_TI)
+- [Computação](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Computacao)
