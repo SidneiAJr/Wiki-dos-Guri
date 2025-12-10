@@ -21,12 +21,6 @@ Aqui estão algumas maneiras pelas quais você pode contribuir para o projeto:
 - **Novos artigos e tutoriais**: Se você tem uma área específica de programação ou TI que gostaria de compartilhar, crie uma nova página ou artigo!
 - **Sugestões**: Se você tiver ideias para novos tópicos ou melhorias no conteúdo, abra uma *issue* para discutir.
   
-## Regras de Contribuição
-
-- **Atribuição**: O conteúdo deste repositório está sob a **Licença Creative Commons - Atribuição-NãoComercial 4.0 (CC BY-NC)**. Ao contribuir, você concorda em licenciar seu trabalho sob os mesmos termos. Atribua crédito adequado a qualquer fonte ou conteúdo que você esteja utilizando.
-  
-- **Qualidade do Conteúdo**: Ao enviar um artigo ou tutorial, tente manter a qualidade do conteúdo. Use uma linguagem clara, explicações concisas e código bem formatado.
-  
 - **Formato e Estilo**:  
   - Use **Markdown** para adicionar ou editar artigos.
   - Mantenha o formato de títulos, subtítulos e listas consistente com o restante do repositório.
