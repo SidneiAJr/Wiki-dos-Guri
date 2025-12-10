@@ -1,0 +1,1 @@
+# Git | Licenças e Tipos:
