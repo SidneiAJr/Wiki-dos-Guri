@@ -21,14 +21,6 @@ Aqui estão algumas maneiras pelas quais você pode contribuir para o projeto:
 - **Novos artigos e tutoriais**: Se você tem uma área específica de programação ou TI que gostaria de compartilhar, crie uma nova página ou artigo!
 - **Sugestões**: Se você tiver ideias para novos tópicos ou melhorias no conteúdo, abra uma *issue* para discutir.
   
-## Como Contribuir
-
-1. **Faça um Fork** do repositório.
-2. **Crie um novo branch** para sua contribuição. Nomeie o branch de forma clara, por exemplo: `adicionar-tutorial-python` ou `corrigir-erro-artigo`.
-3. **Faça as modificações** no conteúdo. Se estiver adicionando novos artigos, use **Markdown** para manter o formato consistente com o resto do projeto.
-4. **Teste suas alterações**: Verifique se tudo está funcionando como esperado. No caso de tutoriais ou códigos, certifique-se de que o código funciona corretamente.
-5. **Envie um Pull Request**: Quando você estiver pronto, envie um PR com uma descrição clara das alterações feitas. Se for um **artigo novo**, adicione uma breve descrição sobre o que o artigo aborda.
-
 ## Regras de Contribuição
 
 - **Atribuição**: O conteúdo deste repositório está sob a **Licença Creative Commons - Atribuição-NãoComercial 4.0 (CC BY-NC)**. Ao contribuir, você concorda em licenciar seu trabalho sob os mesmos termos. Atribua crédito adequado a qualquer fonte ou conteúdo que você esteja utilizando.
