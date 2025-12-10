@@ -1,10 +1,10 @@
-📜 Licença Proprietária – Todos os Direitos Reservados
+# 📜 Licença Proprietária – Todos os Direitos Reservados
 
 Copyright (c) 2025 
 
 Todo o conteúdo presente neste repositório — incluindo textos, imagens, arquivos, documentos, explicações, códigos, organização e qualquer outro material — é protegido por direitos autorais e está sujeito à seguinte licença proprietária:
 
-❌ Proibido realizar:
+## ❌ Proibido realizar:
 
 Copiar, duplicar, ou redistribuir qualquer conteúdo deste repositório.
 
@@ -16,13 +16,13 @@ Utilizar o conteúdo para fins comerciais ou não comerciais.
 
 Publicar ou compartilhar o conteúdo em qualquer plataforma sem permissão expressa.
 
-✔️ Permitido:
+## ✔️ Permitido:
 
 Ler e visualizar o conteúdo exclusivamente dentro do GitHub.
 
 Usar as informações apenas para estudo pessoal (sem copiar ou redistribuir).
 
-🔒 Autorização:
+## 🔒 Autorização:
 
 Qualquer uso que não seja leitura apenas exige autorização explícita do autor.
 Solicitações podem ser feitas diretamente ao proprietário do repositório.
