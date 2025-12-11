@@ -1,11 +1,11 @@
 # NetBeans | 🎲Conexção Banco de dados com SQl 
 
-Nesse Documento Ira Encontrar uma conexção para um banco no SQl.
-- Explicado o que faz.
+Nesse documento, você irá encontrar uma explicação sobre como realizar a conexão com um banco de dados no MySQL.
 
 ## Codigo quebrado em Pedaços:
 
 ### `Imports`
+Aqui você importa as classes necessárias para estabelecer a conexão com o banco de dados.
 ```java
 import java.sql.Connection;
 import java.sql.DriverManager;
