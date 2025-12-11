@@ -1,6 +1,7 @@
-# NetBeans | Conexção Banco de dados com SQl 
+# NetBeans | 🎲Conexção Banco de dados com SQl 
 
 Nesse Documento Ira Encontrar uma conexção para um banco no SQl.
+- Explicado o que faz.
 
 ## Codigo quebrado em Pedaços:
 
