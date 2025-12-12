@@ -1,12 +1,12 @@
 # 📚Javascript | Backend Tutorial Com Crud:
 
-## Criando o servidor:
+## Criando a Porta 🚪:
 
 ````javascript
 const PORT = 3000
 ````
 
-## Importando as Libs express & mysql2:
+## Importando as Libs express & mysql2📚:
 
 ````javascript
 const express = require('express')
