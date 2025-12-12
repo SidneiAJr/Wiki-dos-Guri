@@ -45,7 +45,7 @@ app.post('/usuarios',(req,res)=>{
 })
 ````
 
-## Criando a seleção do banco
+## Criando a seleção do banco | Seleção Tudo do Banco
 
 ```javascript
 // Seleciona tudo do banco
@@ -57,6 +57,56 @@ app.get('/ler',(req,res)=>{
          }
          res.status(200).json(resultado)
 
+    })
+})
+````
+
+## Criando a seleção do banco | Seleção por ID
+
+```javascript
+// Selecionando Pelo ID & Retorna de um usuario especifico
+app.get('/ler/:id',(req,res)=>{
+    // Pegue atravez do parametro da requesição
+    const {id}= req.params
+    const leitura = "SELECT * from usuarios where id = ?";
+     connection.query(leitura,[id],(erro,resultado)=>{
+         if(erro){
+          return res.status(500).send("Erro | Leitura nâo Realizada")
+         }
+         res.status(200).json(resultado)
+    })
+})
+````
+
+## Atualização de Informações:
+
+```javascript
+// Atualiza as informações de usuario:
+app.put('/at/:id',(req,res)=>{
+    const {id} = req.params
+    const {nome,email} = req.body
+    const atualizao = "Update usuarios set nome = ?,email = ? where id = ?";
+     connection.query(atualizao,[nome,email,id],(erro,resultado)=>{
+         if(erro){
+          return res.status(500).send("Erro | ao tentar atualizar o usuario")
+         }
+         res.status(200).send("Usuario Atualizado com sucesso!!!")
+    })
+})
+```
+
+## Deletar Informação:
+
+````javacript
+//rota para deletar
+app.delete('/deletar/:id',(req,res)=>{
+    const {id} = req.params
+    const atualizao = "delete from usuarios where id = ?";
+     connection.query(atualizao,[id],(erro,resultado)=>{
+         if(erro){
+          return res.status(500).send("Erro | ao tentar deletar usuario")
+         }
+         res.status(200).send("Usuario Deletado com sucesso!!!")
     })
 })
 ````
