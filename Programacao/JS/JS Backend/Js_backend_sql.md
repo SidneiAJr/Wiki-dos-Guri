@@ -97,7 +97,7 @@ app.put('/at/:id',(req,res)=>{
 
 ## Deletar Informação:
 
-```javacript
+```js
 //rota para deletar
 app.delete('/deletar/:id',(req,res)=>{
     const {id} = req.params
