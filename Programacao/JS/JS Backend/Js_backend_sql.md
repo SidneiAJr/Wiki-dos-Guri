@@ -97,7 +97,7 @@ app.put('/at/:id',(req,res)=>{
 
 ## Deletar Informação:
 
-````javacript
+```javacript
 //rota para deletar
 app.delete('/deletar/:id',(req,res)=>{
     const {id} = req.params
@@ -109,7 +109,7 @@ app.delete('/deletar/:id',(req,res)=>{
          res.status(200).send("Usuario Deletado com sucesso!!!")
     })
 })
-````
+```
 
 
 
