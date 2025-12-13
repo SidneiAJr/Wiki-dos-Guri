@@ -6,15 +6,15 @@ Todo o conteúdo presente neste repositório — incluindo textos, imagens, arqu
 
 ## ❌ Proibido realizar:
 
-Copiar, duplicar, ou redistribuir qualquer conteúdo deste repositório.
+- Copiar, duplicar, ou redistribuir qualquer conteúdo deste repositório.
 
-Fazer fork sem autorização prévia e formal do autor.
+- Fazer fork sem autorização prévia e formal do autor.
 
-Modificar, adaptar ou criar trabalhos derivados.
+- Modificar, adaptar ou criar trabalhos derivados.
 
-Utilizar o conteúdo para fins comerciais ou não comerciais.
+- Utilizar o conteúdo para fins comerciais é proibido.
 
-Publicar ou compartilhar o conteúdo em qualquer plataforma sem permissão expressa.
+- Publicar ou compartilhar o conteúdo em qualquer plataforma sem permissão expressa.
 
 ## ✔️ Permitido:
 
