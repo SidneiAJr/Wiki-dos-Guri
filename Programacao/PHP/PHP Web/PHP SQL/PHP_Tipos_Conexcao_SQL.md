@@ -2,7 +2,6 @@
 
 ## 🐘 1️⃣ PDO (PHP Data Objects) — o mais recomendado
 
-### Tu já conhece, mas vale o resumo:
 - ✔ suporta vários bancos (MySQL, PostgreSQL, SQLite, SQL Server…)
 - ✔ prepared statements
 - ✔ mais seguro contra SQL Injection
