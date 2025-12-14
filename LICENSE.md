@@ -22,5 +22,5 @@ Utilizar o material como referência para estudos
 
 * ✅ Os créditos ao autor sejam mantidos sempre que houver referência
 
-Este repositório está protegido pela licença Creative Commons BY-NC (Atribuição – Não Comercial)
+* Este repositório está protegido pela licença Creative Commons BY-NC (Atribuição – Não Comercial)
 e também pelas leis de direitos autorais vigentes no Brasil (Lei nº 9.610/98).
