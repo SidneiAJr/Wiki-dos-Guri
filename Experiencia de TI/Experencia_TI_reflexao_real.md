@@ -1,6 +1,6 @@
 # 💼 Reflexão: Processo Seletivo (2018)
 
-Em 2018 participei de um processo seletivo da **CWI**, voltado para desenvolvedores iniciantes.  
+Em 2018 participei de um processo seletivo , voltado para desenvolvedores iniciantes.  
 Foram anunciadas **10 vagas para aproximadamente 500 candidatos**, o que já indicava uma seleção extremamente competitiva.
 
 ---
