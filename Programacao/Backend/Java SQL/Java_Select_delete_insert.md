@@ -124,7 +124,7 @@ public class deletando_banco {
 
 ## Inserindo Informações | Scanner no Banco de dados:
 
-```sql
+```java
 public class NovoFuncionario {
     public static void main(String[] args) {
         final String URL = "jdbc:mysql://localhost:3306/funcionarios";  // URL do MySQL (sem especificar o banco)
@@ -159,3 +159,4 @@ public class NovoFuncionario {
     }
 }
 ```
+
