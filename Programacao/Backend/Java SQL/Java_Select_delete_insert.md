@@ -284,3 +284,56 @@ public class AtualizarFuncionario {
     }
 }
 ````
+
+## Selecionando o ID: 
+
+```java
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class BuscarFuncionarioPorId {
+    public static void main(String[] args) {
+
+        final String URL = "jdbc:mysql://localhost:3306/funcionarios";
+        final String USER = "root";
+        final String PASS = "root";
+
+        Scanner scanner = new Scanner(System.in);
+        
+        // Solicita o ID do funcionário
+        System.out.println("Informe o ID do funcionário: ");
+        int id = scanner.nextInt();  // Lê o ID do funcionário
+        
+        String sql = "SELECT * FROM funcionarios WHERE id = ?";
+        
+        try (Connection conexao = DriverManager.getConnection(URL, USER, PASS);
+             PreparedStatement stm = conexao.prepareStatement(sql)) {
+
+            stm.setInt(1, id);  // Substitui o ? pelo ID informado
+
+            ResultSet rs = stm.executeQuery();
+
+            // Verifica se o ID existe e exibe o resultado
+            if (rs.next()) {
+                String nome = rs.getString("nome");
+                String cargo = rs.getString("cargo");
+                System.out.println("Funcionário encontrado!");
+                System.out.println("ID: " + id);
+                System.out.println("Nome: " + nome);
+                System.out.println("Cargo: " + cargo);
+            } else {
+                System.out.println("Nenhum funcionário encontrado com o ID " + id);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao buscar o funcionário.");
+        } finally {
+            scanner.close();  // Fecha o scanner para evitar vazamento de recursos
+        }
+    }
+}
+```
