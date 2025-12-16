@@ -82,5 +82,30 @@ app.get('/Listar/:id', (req, res) => {
 });
 ````
 
+## Rota para Atualizar por ID:
+```js
+app.put('/atualizar/:id', (req, res) => {
 
+    // ID vem da URL
+    const { id } = req.params
+
+    // Nome e email vêm do body
+    const { nome_pokemon,tipo_pokemon, tem_evolucao} = req.body
+
+    const atualizacao = `
+        UPDATE pokemons
+        SET nome_pokemon = ?, tipo_pokemon = ?,tem_evolucao=?
+        WHERE id = ?
+    `
+
+    connection.query(atualizacao, [nome_pokemon,tipo_pokemon,tem_evolucao , id], (erro) => {
+
+        if (erro) {
+            return res.status(500).send("Erro ao tentar atualizar o usuário")
+        }
+
+        res.status(200).send("Usuário atualizado com sucesso!")
+    })
+})
+````
 
