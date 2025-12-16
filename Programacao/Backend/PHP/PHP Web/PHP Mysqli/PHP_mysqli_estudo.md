@@ -59,3 +59,53 @@ function inserirPokemon($conn) {
     }
 }
 ````
+
+## Função para listar Pokemon:
+```php
+// Função para listar todos os pokémons
+function listarPokemons($conn) {
+    $result = $conn->query("SELECT * FROM pokemons");
+
+    if ($result->num_rows > 0) {
+        $pokemons = [];
+        while ($row = $result->fetch_assoc()) {
+            $pokemons[] = $row;
+        }
+        echo json_encode($pokemons);
+    } else {
+        echo json_encode(["message" => "Nenhum Pokémon encontrado"]);
+    }
+}
+````
+
+## Função para Listar por ID:
+```php
+// Função para listar Pokémon por ID
+function listarPokemonPorId($conn) {
+    $id = $_GET['id'];
+    $result = $conn->query("SELECT * FROM pokemons WHERE id = $id");
+
+    if ($result->num_rows > 0) {
+        echo json_encode($result->fetch_assoc());
+    } else {
+        echo json_encode(["message" => "Pokémon não encontrado"]);
+    }
+}
+````
+
+## Função para Deletar por ID:
+````php
+// Função para deletar um Pokémon
+function deletarPokemon($conn) {
+    $id = $_GET['id'];
+    $query = "DELETE FROM pokemons WHERE id = $id";
+
+    if ($conn->query($query) === TRUE) {
+        echo json_encode(["message" => "Pokémon deletado com sucesso"]);
+    } else {
+        echo json_encode(["message" => "Erro ao deletar Pokémon"]);
+    }
+}
+````
+
+
