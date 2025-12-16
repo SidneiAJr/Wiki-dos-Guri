@@ -109,3 +109,12 @@ app.put('/atualizar/:id', (req, res) => {
 })
 ````
 
+## Porta do Servidor:
+```js
+
+const port = 3000;
+app.listen(port, () => {
+    console.log(`Servidor Rodando em http://localhost:${port}`);
+});
+````
+
