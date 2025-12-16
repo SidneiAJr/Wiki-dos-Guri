@@ -331,3 +331,57 @@ public class selecionandoporID {
     }
 
 ```
+
+## Update com Where | Pra não fazer cagada:
+```java
+package bancodados;
+
+import java.sql.*;
+import java.util.Scanner;
+
+public class AtualizarporID {
+    public static void main(String[] args) {
+
+        final String URL = "jdbc:mysql://localhost:3306/funcionarios";
+        final String USER = "root";
+        final String PASS = "";
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Informe o ID: ");
+        int id = entrada.nextInt();
+        entrada.nextLine(); // limpa buffer
+
+        System.out.print("Novo nome: ");
+        String nome = entrada.nextLine();
+
+        System.out.print("Novo cargo: ");
+        String cargo = entrada.nextLine();
+
+        String sql = "UPDATE funcionarios SET cargo = ?, nome = ? WHERE id = ?";
+
+        try (
+            Connection conexao = DriverManager.getConnection(URL, USER, PASS);
+            PreparedStatement stm = conexao.prepareStatement(sql)
+        ) {
+            stm.setString(1, cargo);
+            stm.setString(2, nome);
+            stm.setInt(3, id);
+
+            int linhasAfetadas = stm.executeUpdate();
+
+            if (linhasAfetadas > 0) {
+                System.out.println("Funcionário atualizado com sucesso!");
+            } else {
+                System.out.println("Funcionário não encontrado.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao atualizar funcionário.");
+            e.printStackTrace();
+        } finally {
+            entrada.close();
+        }
+    }
+}
+```
