@@ -53,7 +53,7 @@ Connection conexao = DriverManager.getConnection(url, usuario, senha);
 ```java
 String url = "jdbc:mysql://localhost:3306/funcionarios";
 String user = "root";
-String pass = "root";
+String pass = "";
 
 Connection conexao = DriverManager.getConnection(url, user, pass);
 ```
