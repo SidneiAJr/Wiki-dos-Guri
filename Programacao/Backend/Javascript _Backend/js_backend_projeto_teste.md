@@ -1,5 +1,6 @@
 # Javascript | Projeto Teste Backend (Curso) | Documentação:
 
+
 ## Banco de dados do Projeto | Estudo:
 ```sql
 CREATE database pokedex;
