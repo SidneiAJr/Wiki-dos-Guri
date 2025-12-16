@@ -1,5 +1,6 @@
 # Javascript | Projeto Teste Backend (Curso) | Documentação:
 
+> Codigo desenvolvido para estudar no curso.
 
 ## Banco de dados do Projeto | Estudo:
 ```sql
