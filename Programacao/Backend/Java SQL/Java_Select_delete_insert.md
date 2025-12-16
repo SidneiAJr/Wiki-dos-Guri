@@ -27,7 +27,7 @@ conexao.close();
 }
 ```
 
-## Tratamento de Excesão SQl:
+## Tratamento de Exceção SQl:
 ```java
 catch(SQLException e){
              // Tratamento de erro
