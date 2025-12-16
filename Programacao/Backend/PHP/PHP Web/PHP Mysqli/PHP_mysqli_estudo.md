@@ -108,4 +108,26 @@ function deletarPokemon($conn) {
 }
 ````
 
+## Função pra atualizar Pokemon:
+
+```php
+// Função para atualizar Pokémon
+function atualizarPokemon($conn) {
+    $data = json_decode(file_get_contents("php://input"));
+
+    $id = $_GET['id'];
+    $nome_pokemon = $data->nome_pokemon;
+    $tipo_pokemon = $data->tipo_pokemon;
+    $tem_evolucao = $data->tem_evolucao;
+
+    $query = "UPDATE pokemons SET nome_pokemon = '$nome_pokemon', tipo_pokemon = '$tipo_pokemon', tem_evolucao = '$tem_evolucao' WHERE id = $id";
+
+    if ($conn->query($query) === TRUE) {
+        echo json_encode(["message" => "Pokémon atualizado com sucesso"]);
+    } else {
+        echo json_encode(["message" => "Erro ao atualizar Pokémon"]);
+    }
+}
+````
+
 
