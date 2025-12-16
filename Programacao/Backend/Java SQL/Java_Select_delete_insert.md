@@ -199,3 +199,45 @@ public class AtualizarFuncionario {
 }
 ```
 
+## DELETE COM WHERE (seguro) 🛡️
+
+```sql
+DELETE FROM funcionarios WHERE id = ?;
+```
+
+```java
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class DeletarFuncionario {
+    public static void main(String[] args) {
+
+        final String URL = "jdbc:mysql://localhost:3306/funcionarios";
+        final String USER = "root";
+        final String PASS = "root";
+
+        String sql = "DELETE FROM funcionarios WHERE id = ?";
+
+        try (Connection conexao = DriverManager.getConnection(URL, USER, PASS);
+             PreparedStatement stm = conexao.prepareStatement(sql)) {
+
+            stm.setInt(1, 1); // ID do funcionário a ser deletado
+
+            int linhasAfetadas = stm.executeUpdate();
+
+            if (linhasAfetadas > 0) {
+                System.out.println("Funcionário deletado com sucesso!");
+            } else {
+                System.out.println("Nenhum funcionário encontrado com esse ID.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao deletar funcionário.");
+        }
+    }
+}
+```
+
+
