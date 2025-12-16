@@ -130,4 +130,8 @@ function atualizarPokemon($conn) {
 }
 ````
 
+## Fechando a conexção:
+```php
+$conn->close();
+````
 
