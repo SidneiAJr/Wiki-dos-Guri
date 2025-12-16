@@ -160,3 +160,42 @@ public class NovoFuncionario {
 }
 ```
 
+## Update | Global RISCO EXTREMO DE DEMISSÃO POR JUSTA ⚠️⚠️
+
+```JAVA
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class AtualizarFuncionario {
+    public static void main(String[] args) {
+
+        final String URL = "jdbc:mysql://localhost:3306/funcionarios";
+        final String USER = "root";
+        final String PASS = "root";
+
+        String sql = "UPDATE funcionarios SET nome = ?, cargo = ? WHERE id = ?";
+
+        try (Connection conexao = DriverManager.getConnection(URL, USER, PASS);
+             PreparedStatement stm = conexao.prepareStatement(sql)) {
+
+            stm.setString(1, "Joao Banana 1");
+            stm.setString(2, "Estagiario Supremo");
+            stm.setInt(3, 1); // ID do cara que vai mudar
+
+            int linhas = stm.executeUpdate();
+
+            if (linhas > 0) {
+                System.out.println("Funcionário atualizado com sucesso!");
+            } else {
+                System.out.println("Nenhum funcionário encontrado com esse ID.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao atualizar funcionário.");
+        }
+    }
+}
+```
+
