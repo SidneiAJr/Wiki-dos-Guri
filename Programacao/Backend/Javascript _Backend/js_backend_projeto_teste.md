@@ -27,4 +27,46 @@ app.use(express.json());
 app.use(cors());
 ```
 
-## 
+## Criando Rota do Insert:
+```js
+app.post('/Inserir', (req, res) => {
+    const { nome_pokemon, tipo_pokemon, tem_evolucao } = req.body;
+    const comandoBanco = `INSERT INTO pokemons(nome_pokemon, tipo_pokemon, tem_evolucao) VALUES(?, ?, ?)`;
+    connection.query(comandoBanco, [nome_pokemon, tipo_pokemon, tem_evolucao], (erro) => {
+        if (erro) {
+            return res.status(500).send("Erro ao Adicionar Pokemon ao Banco!");
+        }
+        return res.status(201).send("Sucesso ao Adicionar Pokemon ao Banco!");
+    });
+});
+```
+
+## Criando Rota do Delete:
+```js
+app.delete('/deletar/:id', (req, res) => {  // Corrigido para aceitar o id via parâmetro
+    const { id } = req.params;
+    const comandoBanco = `DELETE FROM pokemons WHERE id = ?`;  // Corrigido a query
+    connection.query(comandoBanco, [id], (erro) => {
+        if (erro) {
+            return res.status(500).send("Erro ao Deletar Pokemon do Banco!");
+        }
+        return res.status(200).send("Sucesso ao Deletar Pokemon do Banco!");
+    });
+});
+```
+
+## Rota para Listar
+```js
+app.get('/Listar', (req, res) => {
+    const comandoBanco = `SELECT * FROM pokemons`;  // Verifique se você está consultando a tabela correta
+    connection.query(comandoBanco, (erro, resultados) => {
+        if (erro) {
+            return res.status(500).send("Erro ao Listar!");
+        }
+        return res.status(200).json(resultados);  // Envia os dados como JSON
+    });
+});
+````
+
+
+
