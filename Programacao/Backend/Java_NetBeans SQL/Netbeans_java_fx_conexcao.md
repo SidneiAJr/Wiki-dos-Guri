@@ -185,7 +185,6 @@ btnDeletar.setOnAction(e -> {
 * JDBC funciona normalmente em **JavaFX (desktop)**
 * Sempre use **PreparedStatement**
 * Separe **UI**, **Conexão** e **Regras**
-* Nunca use JDBC direto em Android
 
 ---
 
@@ -198,4 +197,4 @@ btnDeletar.setOnAction(e -> {
 
 ---
 
-📦 Pronto para subir no GitHub 🚀
+
