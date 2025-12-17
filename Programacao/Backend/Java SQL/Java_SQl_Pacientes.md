@@ -1,9 +1,9 @@
 # ☕ Java | Sistema Paciente com 🎲SQL 
 
-* Criando Conexção do Banco
-* Criando o banco
-* Criando Tabela
-* Inserindo Informação
+* `Criando Conexção do Banco`
+* `Criando o banco`
+* `Criando Tabela`
+* `Inserindo Informação`
 
 ## Comandos SQL | Usado:
 
