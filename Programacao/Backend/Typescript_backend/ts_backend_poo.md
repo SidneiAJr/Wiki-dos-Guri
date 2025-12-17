@@ -221,9 +221,4 @@ deletarFuncionario();
 
 📌 **Isso aqui é backend raiz**, ótimo pra aprender banco antes de ir pra API, Express ou Nest.
 
-Se quiser, o próximo passo pode ser:
 
-* menu estilo `switch`
-* versão API REST
-* arquitetura Controller/Service
-* ou converter isso pra **C# Console** também 😄
