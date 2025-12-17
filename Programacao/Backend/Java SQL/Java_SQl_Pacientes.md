@@ -49,7 +49,7 @@ VALUES (?, ?, ?);
 * `Opcao e iniciada com 0.`
 * `Scanner le a entrada do usuario`
 * `case 1 | Cria a conexcao`
-* `case 2 | Cria o Bando`
+* `case 2 | Cria o Banco`
 * `Case 3 | Cria a tabela | Insere os campos`
 * `Case 4 | Insere Informação na tabela desejada`
 * `Case 5 | Default Fecha o While`
