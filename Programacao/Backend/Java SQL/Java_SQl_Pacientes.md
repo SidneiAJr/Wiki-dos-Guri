@@ -5,6 +5,20 @@
 * Criando Tabela
 * Inserindo Informação
 
+## Comandos SQL:
+
+```sql
+CREATE DATABASE if not exists Hospital
+"CREATE TABLE IF NOT EXISTS Pacientes(" +
+                    "id INT auto_increment primary key,"+
+                    "nome varchar(80) not null,"+
+                    "idade int not null,"+
+                    "plano varchar(50) not null"+
+                    ")";
+INSERT INTO pacientes (nome,idade,plano) values (?,?,?)
+--- Porque os ?? porque sim, Brinks
+--- Server para SQL Injection proteção 🛡️
+```
 
 ## Menu:
 
