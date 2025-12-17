@@ -65,7 +65,7 @@
 | Pos: Cybersegurança     | 
 | Pos : Fisica            | 
 
-***Aqui você encontra de tudo um pouco — desde Hardware e Computação até Matemática Financeira.***
+***Aqui você encontra de tudo um pouco — desde Hardware e Computação***
 
 ## Sumario:
 
