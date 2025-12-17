@@ -22,7 +22,7 @@ INSERT INTO pacientes (nome,idade,plano) values (?,?,?)
 
 ## Comando SQl | Similar Usado no banco 🎲🎲:
 
-```bash
+```sql
 -- Cria o banco de dados caso ainda não exista
 CREATE DATABASE IF NOT EXISTS Hospital;
 
