@@ -1,387 +1,201 @@
-# ☕Java | Delete | Insert | Create 
+# ☕ JavaFX + MySQL (CRUD) – Telas com Labels
 
-## Importandos libs:
-```java
-import java.sql.Connection; // Import de Lib de conexção
-import java.sql.DriverManager; // Import do drive de conexção
-import java.sql.SQLException; // Excessoes do SQL
-import java.sql.Statement;
-import java.util.Scanner;
-```
+Este documento converte o fluxo **Create / Read / Update / Delete** do seu projeto JDBC em **saídas visuais usando JavaFX**, com **Labels**, **TextFields** e **Buttons**.
 
-## Variaveis Locais:
-```java
- final String URL = "jdbc:mysql://localhost:3306/";  // URL do MySQL (sem especificar o banco)
-final String USER = "root";  // Usuário do MySQL
-final String PASS = "root";  // Senha do MySQL
-String Banco = "Funcionarios"; //Nome do banco vai ser criado
-```
+---
 
-## Tentativa | Try:
-```java
- try{
-Connection conexao = DriverManager.getConnection(URL,USER,PASS);
-System.out.println("Conexao Efetuada com Sucesso!");
- //Fecha Conexcao.
-conexao.close();
-}
-```
-
-## Tratamento de Exceção SQl:
-```java
-catch(SQLException e){
-             // Tratamento de erro
-             System.out.println("Deu ruim Erro! Não conecto Corre berg!!");
-         }
-```
-
-## Conectando ao Banco | Classe Conexção:
+## 📌 Estrutura Base (JavaFX)
 
 ```java
-public class conexcao {
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+public class App extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(20));
+        grid.setHgap(10);
+        grid.setVgap(10);
+
+        Scene scene = new Scene(grid, 420, 300);
+        stage.setTitle("Sistema Funcionários");
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public static void main(String[] args) {
-         final String URL = "jdbc:mysql://localhost:3306/";  // URL do MySQL (sem especificar o banco)
-         final String USER = "root";  // Usuário do MySQL
-         final String PASS = "root";  // Senha do MySQL
-         String Banco = "Funcionarios"; //Nome do banco vai ser criado
-         try{
-             Connection conexao = DriverManager.getConnection(URL,USER,PASS);
-             System.out.println("Conexao Efetuada com Sucesso!");
-             //Fecha Conexcao.
-             conexao.close();
-         }catch(SQLException e){
-             // Tratamento de erro
-             System.out.println("Deu ruim Erro! Não conecto Corre berg!!");
-         }
+        launch(args);
     }
 }
 ```
 
-## Criando o Banco: 
-```java
-public class criar_banco {
-    public static void main(String[] args) {
-        final String URL = "jdbc:mysql://localhost:3306/";  // URL do MySQL (sem especificar o banco)
-        final String USER = "root";  // Usuário do MySQL
-        final String PASS = "root";  // Senha do MySQL
-        try(Connection conexao = DriverManager.getConnection(URL,USER,PASS);Statement stm = conexao.createStatement()){
-         // Comando sql para criar o banco de dados
-            // if not existis evita erro caso o banco ja exista
-            String sql = "CREATE DATABASE if not exists funcionarios";
-            stm.execute(sql);
-            System.out.println("Banco de dados Criado com sucesso!");
-        }catch(SQLException e){
-            System.out.println("Erro ao criar  o banco.");
-        }
-    }
-}
-```
+---
 
-## Criando a tabela:
-```java
-public class insert_banco {
-    public static void main(String[] args) {
-        final String URL = "jdbc:mysql://localhost:3306/funcionarios";  // URL do MySQL (sem especificar o banco)
-        final String USER = "root";  // Usuário do MySQL
-        final String PASS = "root";  // Senha do MySQL
-        try(Connection conexao = DriverManager.getConnection(URL,USER,PASS);Statement stm = conexao.createStatement()){
-            // Comando sql para criar o banco de dados
-            // if not existis evita erro caso o banco ja exista
-            String sql = "CREATE TABLE IF NOT EXISTS funcionarios(" +
-                    "id INT auto_increment primary key,"+
-                    "nome varchar(80) not null,"+
-                    "cargo varchar(50)not null"+
-                    ")";
-            stm.executeUpdate(sql);
-            // confirmação no console
-            System.out.println("Tabela criada com sucesso!");
-        }catch(SQLException e){
-            System.out.println("Erro ao criar  a Tabela.");
-        }
-    }
-}
-````
-
-## Deletando Tudo | AVISO EXTREMAMENTE PERIGOSO | ⚠️⚠️AMBIENTE DE TESTES:
-```java
-public class deletando_banco {
-    public static void main(String[] args) {
-        final String URL = "jdbc:mysql://localhost:3306/funcionarios";  // URL do MySQL (sem especificar o banco)
-        final String USER = "root";  // Usuário do MySQL
-        final String PASS = "root";  // Senha do MySQL
-        String sql =
-                "DELETE FROM funcionarios";
-        try(Connection conexao = DriverManager.getConnection(URL,USER,PASS); PreparedStatement stm = conexao.prepareStatement(sql)){
-            //subtituil os parametros da sql
-            stm.executeUpdate();
-
-        } catch (SQLException e) {
-            System.out.println("Erro ao conectar ao banco de dados.");
-        }
-    }
-}
-```
-
-## Inserindo Informações | Scanner no Banco de dados:
-
-```java
-public class NovoFuncionario {
-    public static void main(String[] args) {
-        final String URL = "jdbc:mysql://localhost:3306/funcionarios";  // URL do MySQL (sem especificar o banco)
-        final String USER = "root";  // Usuário do MySQL
-        final String PASS = "root";  // Senha do MySQL
-
-        Scanner entrada = new Scanner(System.in);
-        //Solicita o nome do funcionario:
-        System.out.println("Informe Nome: ");
-        String nome = entrada.nextLine();
-        // Informe o comentario
-        System.out.println("Informe Cargo");
-        String cargo = entrada.nextLine();
-        /*
-        SQl parametrização
-        o uso de ?  evita sql injection
-         */
-        String sql =
-                // Insert into funcionarios (nome) values ('jesus'); from funcionarios ('1'='1');
-                "INSERT INTO funcionarios (nome,cargo) values (?,?)";
-                try(Connection conexao = DriverManager.getConnection(URL,USER,PASS); PreparedStatement stm = conexao.prepareStatement(sql)){
-                     //subtituil os parametros da sql
-                    stm.setString(1,nome);
-                    stm.setString(2,cargo);
-                    stm.executeUpdate();
-
-                } catch (SQLException e) {
-                    System.out.println("Erro ao conectar ao banco de dados.");
-                }finally {
-                    entrada.close();  // Fecha o scanner para evitar vazamento de recursos
-                }
-    }
-}
-```
-
-## Update | Global RISCO EXTREMO DE DEMISSÃO POR JUSTA ⚠️⚠️
-
-```JAVA
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
-public class AtualizarFuncionario {
-    public static void main(String[] args) {
-
-        final String URL = "jdbc:mysql://localhost:3306/funcionarios";
-        final String USER = "root";
-        final String PASS = "root";
-
-        String sql = "UPDATE funcionarios SET nome = ?, cargo = ? WHERE id = ?";
-
-        try (Connection conexao = DriverManager.getConnection(URL, USER, PASS);
-             PreparedStatement stm = conexao.prepareStatement(sql)) {
-
-            stm.setString(1, "Joao Banana 1");
-            stm.setString(2, "Estagiario Supremo");
-            stm.setInt(3, 1); // ID do cara que vai mudar
-
-            int linhas = stm.executeUpdate();
-
-            if (linhas > 0) {
-                System.out.println("Funcionário atualizado com sucesso!");
-            } else {
-                System.out.println("Nenhum funcionário encontrado com esse ID.");
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Erro ao atualizar funcionário.");
-        }
-    }
-}
-```
-
-## DELETE COM WHERE (seguro) 🛡️
-
-```sql
-DELETE FROM funcionarios WHERE id = ?;
-```
+## 🔌 Conexão com Banco (Classe Separada)
 
 ```java
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class DeletarFuncionario {
-    public static void main(String[] args) {
+public class ConexaoDB {
+    private static final String URL = "jdbc:mysql://localhost:3306/funcionarios";
+    private static final String USER = "root";
+    private static final String PASS = "root";
 
-        final String URL = "jdbc:mysql://localhost:3306/funcionarios";
-        final String USER = "root";
-        final String PASS = "root";
-
-        String sql = "DELETE FROM funcionarios WHERE id = ?";
-
-        try (Connection conexao = DriverManager.getConnection(URL, USER, PASS);
-             PreparedStatement stm = conexao.prepareStatement(sql)) {
-
-            stm.setInt(1, 1); // ID do funcionário a ser deletado
-
-            int linhasAfetadas = stm.executeUpdate();
-
-            if (linhasAfetadas > 0) {
-                System.out.println("Funcionário deletado com sucesso!");
-            } else {
-                System.out.println("Nenhum funcionário encontrado com esse ID.");
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Erro ao deletar funcionário.");
-        }
+    public static Connection conectar() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASS);
     }
 }
 ```
 
-## UPDATE COM WHERE (seguro)
+---
 
-```sql
-UPDATE funcionarios
-SET nome = ?, cargo = ?
-WHERE id = ?;
-```
+## ➕ Inserir Funcionário (CREATE)
 
 ```java
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+Label lblNome = new Label("Nome:");
+TextField txtNome = new TextField();
 
-public class AtualizarFuncionario {
-    public static void main(String[] args) {
+Label lblCargo = new Label("Cargo:");
+TextField txtCargo = new TextField();
 
-        final String URL = "jdbc:mysql://localhost:3306/funcionarios";
-        final String USER = "root";
-        final String PASS = "root";
+Button btnSalvar = new Button("Salvar");
+Label lblStatus = new Label();
 
-        String sql = "UPDATE funcionarios SET nome = ?, cargo = ? WHERE id = ?";
+btnSalvar.setOnAction(e -> {
+    String nome = txtNome.getText();
+    String cargo = txtCargo.getText();
 
-        try (Connection conexao = DriverManager.getConnection(URL, USER, PASS);
-             PreparedStatement stm = conexao.prepareStatement(sql)) {
+    String sql = "INSERT INTO funcionarios (nome, cargo) VALUES (?, ?)";
 
-            stm.setString(1, "Joao Banana 1");
-            stm.setString(2, "Dev Supremo");
-            stm.setInt(3, 1); // ID do funcionário
+    try (var conn = ConexaoDB.conectar();
+         var ps = conn.prepareStatement(sql)) {
 
-            int linhas = stm.executeUpdate();
+        ps.setString(1, nome);
+        ps.setString(2, cargo);
+        ps.executeUpdate();
 
-            if (linhas > 0) {
-                System.out.println("Funcionário atualizado com sucesso!");
-            } else {
-                System.out.println("Funcionário não encontrado.");
-            }
+        lblStatus.setText("Funcionário cadastrado com sucesso!");
 
-        } catch (SQLException e) {
-            System.out.println("Erro ao atualizar funcionário.");
+    } catch (Exception ex) {
+        lblStatus.setText("Erro ao inserir funcionário");
+    }
+});
+```
+
+---
+
+## 🔍 Buscar Funcionário por ID (READ)
+
+```java
+Label lblId = new Label("ID:");
+TextField txtId = new TextField();
+
+Label lblNomeOut = new Label("Nome: ");
+Label lblCargoOut = new Label("Cargo: ");
+
+Button btnBuscar = new Button("Buscar");
+
+btnBuscar.setOnAction(e -> {
+    String sql = "SELECT * FROM funcionarios WHERE id = ?";
+
+    try (var conn = ConexaoDB.conectar();
+         var ps = conn.prepareStatement(sql)) {
+
+        ps.setInt(1, Integer.parseInt(txtId.getText()));
+        var rs = ps.executeQuery();
+
+        if (rs.next()) {
+            lblNomeOut.setText("Nome: " + rs.getString("nome"));
+            lblCargoOut.setText("Cargo: " + rs.getString("cargo"));
+        } else {
+            lblNomeOut.setText("Nome: não encontrado");
+            lblCargoOut.setText("Cargo: -");
         }
+
+    } catch (Exception ex) {
+        lblNomeOut.setText("Erro na busca");
     }
-}
-````
-
-## Selecionando o ID: 
-
-```java
-package bancodados;
-import java.sql.Connection; // Import de Lib de conexção
-import java.sql.DriverManager; // Import do drive de conexção
-import java.sql.SQLException; // Excessoes do SQL
-import java.sql.Statement;
-import java.sql.*;
-import java.util.Scanner;
-
-public class selecionandoporID {
-    public static void main(String[] args) {
-        final String URL = "jdbc:mysql://localhost:3306/funcionarios";  // URL do MySQL (sem especificar o banco)
-        final String USER = "root";  // Usuário do MySQL
-        final String PASS = "";  // Senha do MySQL
-        Scanner entrada = new Scanner(System.in);
-        //Solicita o nome do funcionario:
-        System.out.println("Informe o ID: ");
-        int id = entrada.nextInt();
-        String sql =
-                // Insert into funcionarios (nome) values ('jesus'); from funcionarios ('1'='1');
-                "Select * from funcionarios where id=?";
-                try(Connection conexao = DriverManager.getConnection(URL,USER,PASS); PreparedStatement stm = conexao.prepareStatement(sql)){
-                     //subtituil os parametros da sql
-                    stm.setInt(1,id);
-                    ResultSet rs = stm.executeQuery();
-                    if(rs.next()){
-                    int idfuncionario = rs.getInt("id");
-                    String NomeFuncionario = rs.getString("nome");
-                    String Cargo = rs.getString("cargo");
-                    System.out.println("Funcionario ID: |"+ idfuncionario +" Nome Funcionario: |"+ NomeFuncionario + " Cargo: |" + Cargo);
-                    }else{
-                        System.out.println("Funcionário não encontrado!");
-                    }
-                   
-                } catch (SQLException e) {
-                    System.out.println("Erro ao conectar ao banco de dados.");
-                }finally {
-                    entrada.close();  // Fecha o scanner para evitar vazamento de recursos
-                }
-    }
-        
-    }
-
+});
 ```
 
-## Update com Where | Pra não fazer cagada:
+---
+
+## ✏️ Atualizar Funcionário (UPDATE)
+
 ```java
-package bancodados;
+Button btnAtualizar = new Button("Atualizar");
+Label lblUpdateStatus = new Label();
 
-import java.sql.*;
-import java.util.Scanner;
+btnAtualizar.setOnAction(e -> {
+    String sql = "UPDATE funcionarios SET nome = ?, cargo = ? WHERE id = ?";
 
-public class AtualizarporID {
-    public static void main(String[] args) {
+    try (var conn = ConexaoDB.conectar();
+         var ps = conn.prepareStatement(sql)) {
 
-        final String URL = "jdbc:mysql://localhost:3306/funcionarios";
-        final String USER = "root";
-        final String PASS = "";
+        ps.setString(1, txtNome.getText());
+        ps.setString(2, txtCargo.getText());
+        ps.setInt(3, Integer.parseInt(txtId.getText()));
 
-        Scanner entrada = new Scanner(System.in);
+        int linhas = ps.executeUpdate();
+        lblUpdateStatus.setText(linhas > 0 ? "Atualizado com sucesso" : "ID não encontrado");
 
-        System.out.print("Informe o ID: ");
-        int id = entrada.nextInt();
-        entrada.nextLine(); // limpa buffer
-
-        System.out.print("Novo nome: ");
-        String nome = entrada.nextLine();
-
-        System.out.print("Novo cargo: ");
-        String cargo = entrada.nextLine();
-
-        String sql = "UPDATE funcionarios SET cargo = ?, nome = ? WHERE id = ?";
-
-        try (
-            Connection conexao = DriverManager.getConnection(URL, USER, PASS);
-            PreparedStatement stm = conexao.prepareStatement(sql)
-        ) {
-            stm.setString(1, cargo);
-            stm.setString(2, nome);
-            stm.setInt(3, id);
-
-            int linhasAfetadas = stm.executeUpdate();
-
-            if (linhasAfetadas > 0) {
-                System.out.println("Funcionário atualizado com sucesso!");
-            } else {
-                System.out.println("Funcionário não encontrado.");
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Erro ao atualizar funcionário.");
-            e.printStackTrace();
-        } finally {
-            entrada.close();
-        }
+    } catch (Exception ex) {
+        lblUpdateStatus.setText("Erro ao atualizar");
     }
-}
+});
 ```
+
+---
+
+## 🗑️ Deletar Funcionário (DELETE)
+
+```java
+Button btnDeletar = new Button("Deletar");
+Label lblDeleteStatus = new Label();
+
+btnDeletar.setOnAction(e -> {
+    String sql = "DELETE FROM funcionarios WHERE id = ?";
+
+    try (var conn = ConexaoDB.conectar();
+         var ps = conn.prepareStatement(sql)) {
+
+        ps.setInt(1, Integer.parseInt(txtId.getText()));
+        int linhas = ps.executeUpdate();
+
+        lblDeleteStatus.setText(linhas > 0 ? "Deletado com sucesso" : "ID não encontrado");
+
+    } catch (Exception ex) {
+        lblDeleteStatus.setText("Erro ao deletar");
+    }
+});
+```
+
+---
+
+## 🧠 Observações Importantes
+
+* JDBC funciona normalmente em **JavaFX (desktop)**
+* Sempre use **PreparedStatement**
+* Separe **UI**, **Conexão** e **Regras**
+* Nunca use JDBC direto em Android
+
+---
+
+## ✅ Próximo nível
+
+* Migrar para **FXML**
+* Criar **DAO**
+* Aplicar **MVC**
+* Adicionar **Alert dialogs**
+
+---
+
+📦 Pronto para subir no GitHub 🚀
