@@ -5,7 +5,7 @@
 * Criando Tabela
 * Inserindo Informação
 
-## Comandos SQL:
+## Comandos SQL | Usado:
 
 ```sql
 CREATE DATABASE if not exists Hospital
@@ -19,6 +19,29 @@ INSERT INTO pacientes (nome,idade,plano) values (?,?,?)
 --- Porque os ?? porque sim, Brinks
 --- Server para SQL Injection proteção 🛡️
 ```
+
+## Comando SQl | Similar Usado no banco 🎲🎲:
+
+```bash
+-- Cria o banco de dados caso ainda não exista
+CREATE DATABASE IF NOT EXISTS Hospital;
+
+-- Seleciona o banco
+USE Hospital;
+
+-- Cria a tabela de pacientes
+CREATE TABLE IF NOT EXISTS Pacientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(80) NOT NULL,
+    idade INT NOT NULL,
+    plano VARCHAR(50) NOT NULL
+);
+
+-- Inserção segura de dados (usada via PreparedStatement no Java)
+INSERT INTO pacientes (nome, idade, plano) 
+VALUES (?, ?, ?);
+```
+
 
 ## Menu:
 
