@@ -52,7 +52,9 @@ VALUES (?, ?, ?);
 * case 2 | Cria o Bando
 * Case 3 | Cria a tabela | Insere os campos
 * Case 4 | Insere Informação na tabela desejada
-* Case 5 | Default Fecha o While 
+* Case 5 | Default Fecha o While
+
+> Importante:  final String URL = "jdbc:mysql://localhost:3306/";  <----- Aqui na criacao da tabela referenciar ao JBDC o caminho do banco ⚠️ Cuidado com Letras Maiusculas e Minusculas
 
 ```java
 import java.util.Scanner;
