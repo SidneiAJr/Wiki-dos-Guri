@@ -54,6 +54,7 @@ public class Menu {
     }
 }
 ```
+---
 
 1- Chamando classe pelo nome criando o um nova chamada
 
