@@ -1,7 +1,7 @@
 # ☕ Java | CRUD Pacientes | Completos | Console Scanner:
 
 
-## `MENU | Principal parac chamar as classes`
+## `MENU | Principal para chamar as classes`
 
 ```java
 import java.util.Scanner;
