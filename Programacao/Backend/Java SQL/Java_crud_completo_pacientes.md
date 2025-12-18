@@ -1,7 +1,7 @@
 # ☕ Java | CRUD Pacientes | Completos | Console Scanner:
 
 
-## ´Menu´
+## `MENU`
 
 ```java
 import java.util.Scanner;
