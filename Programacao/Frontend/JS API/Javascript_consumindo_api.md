@@ -1,4 +1,8 @@
-# # 📡 Consumo de API – Pokédex com JavaScript
+# 📡 Consumo de API – Pokédex com JavaScript
+
+- 📌 Este projeto consome a API diretamente no Front-end usando JavaScript puro.
+- ⚠️ Algumas imagens animadas podem não existir para todos os Pokémon.
+
 
 ## URL da API:
 ```js
