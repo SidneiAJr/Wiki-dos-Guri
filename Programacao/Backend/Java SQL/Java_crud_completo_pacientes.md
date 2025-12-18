@@ -56,8 +56,11 @@ public class Menu {
 ```
 
 1- Chamando classe pelo nome criando o um nova chamada
+
 2- Passando Parametro
+
 3- Inicializando uma Opção com 0
+
 4 - Colocando while
 
 
