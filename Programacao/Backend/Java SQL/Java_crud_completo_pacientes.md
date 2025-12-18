@@ -280,3 +280,56 @@ public class deletaPaciente {
     }
 }
 ````
+
+## Lista de Paciente | Completa:
+
+```java
+public class ListaBanco {
+    final String URL = "jdbc:mysql://localhost:3306/";  // URL do MySQL (sem especificar o banco)
+    final String USER = "root";  // Usuário do MySQL
+    final String PASS = "root";  // Senha do MySQL
+
+  
+
+    public void CriarBanco() {
+        try (
+            // Estabelece a conexão com o banco de dados
+            Connection conexao = DriverManager.getConnection(URL, USER, PASS);
+            Statement stm = conexao.createStatement()
+        ) {
+            // Comando SQL para selecionar todos os pacientes da tabela "pacientes"
+            String sql = "SELECT * FROM hospital.pacientes";
+
+            // Executa a consulta e armazena o resultado no ResultSet
+            ResultSet rs = stm.executeQuery(sql);
+
+            // StringBuilder para armazenar os dados que serão exibidos
+            StringBuilder sb = new StringBuilder();
+
+            // Itera sobre o ResultSet para obter e formatar os dados
+            while (rs.next()) {
+                // Supondo que a tabela "pacientes" tenha as colunas "id", "nome", "idade", "plano"
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                int idade = rs.getInt("idade");
+                String plano = rs.getString("plano");
+
+                // Adiciona os dados formatados ao StringBuilder
+                sb.append("ID: ").append(id)
+                  .append(", Nome: ").append(nome)
+                  .append(", Idade: ").append(idade)
+                  .append(", Plano: ").append(plano)
+                  .append("\n");
+            }
+
+            // Exibe os dados no componente JTextArea (ou qualquer outro componente gráfico)
+            jt_saida.setText(sb.toString());
+
+        } catch (SQLException e) {
+            // Em caso de erro de SQL, exibe a mensagem de erro
+            System.out.println("Erro ao consultar os dados.");
+            e.printStackTrace();
+        }
+    }
+}
+```
