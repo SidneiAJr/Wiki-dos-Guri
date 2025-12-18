@@ -72,46 +72,78 @@ import java.sql.*; // Import de Lib de conexção
 
 ## Conexção do Banco | Com Metodo Conectar
 ```java
+// Importa as classes necessárias para a conexão com o banco de dados e manipulação de exceções.
+import java.sql.*; 
+
 public class ConexcaoBanco {
-    final String URL = "jdbc:mysql://localhost:3306/";  // URL do MySQL (sem especificar o banco)
-    final String USER = "root";  // Usuário do MySQL
-    final String PASS = "root";  // Senha do MySQL
-    String Banco = "Funcionarios"; //Nome do banco vai ser criado
+
+    // Declaração das variáveis para conexão com o banco de dados
+    final String URL = "jdbc:mysql://localhost:3306/";  // URL do MySQL. A URL está sem o nome do banco, que será especificado posteriormente.
+    final String USER = "root";  // Usuário do MySQL, no caso "root".
+    final String PASS = "root";  // Senha do MySQL, no caso "root".
+    String Banco = "Funcionarios"; // Nome do banco que será criado ou acessado.
+
+    // Método para estabelecer a conexão com o banco de dados
     public void Conectar(){
-        try{
-            Connection conexao = DriverManager.getConnection(URL,USER,PASS);
+
+        // Bloco try-catch para tratar possíveis exceções durante a tentativa de conexão.
+        try {
+            // Estabelece a conexão com o banco de dados utilizando as informações fornecidas (URL, usuário, senha).
+            Connection conexao = DriverManager.getConnection(URL, USER, PASS);
+            
+            // Exibe uma mensagem informando que a conexão foi realizada com sucesso.
             System.out.println("Conexao Efetuada com Sucesso!");
-            //Fecha Conexcao.
+
+            // Fecha a conexão imediatamente após o uso, no caso de uma simples verificação de conexão.
             conexao.close();
-        }catch(SQLException e){
-            // Tratamento de erro
+            
+        } catch (SQLException e) {
+            // Em caso de erro durante a tentativa de conexão, exibe a mensagem de erro personalizada.
             System.out.println("Deu ruim Erro! Não conecto Corre berg!!");
+            
+            // Exibe a stack trace do erro (informações detalhadas sobre o erro).
+            e.printStackTrace();
         }
     }
 }
+
 ```
 
 ## Criar Banco | Com Metodo:
 
 ```java
-import java.sql.*; // Import de Lib de conexção
+import java.sql.*; // Importa todas as classes necessárias para estabelecer conexão com o banco de dados MySQL, como Connection, Statement e SQLException.
 
 public class criarBanco {
-    final String URL = "jdbc:mysql://localhost:3306/";  // URL do MySQL (sem especificar o banco)
-    final String USER = "root";  // Usuário do MySQL
-    final String PASS = "root";  // Senha do MySQL
-        public void CriarBanco(){
-            try(Connection conexao = DriverManager.getConnection(URL,USER,PASS);Statement stm = conexao.createStatement()){
-                // Comando sql para criar o banco de dados
-                // if not existis evita erro caso o banco ja exista
-                String sql = "CREATE DATABASE if not exists Hospital";
-                stm.execute(sql);
-                System.out.println("Banco de dados Criado com sucesso!");
-            }catch(SQLException e){
-                System.out.println("Erro ao criar  o banco.");
-            }
+
+    // Declaração das variáveis de conexão com o banco de dados
+    final String URL = "jdbc:mysql://localhost:3306/";  // URL de conexão com o MySQL. Está sem o nome do banco de dados, apenas se conecta ao servidor.
+    final String USER = "root";  // Usuário utilizado para a conexão com o MySQL.
+    final String PASS = "root";  // Senha utilizada para a conexão com o MySQL.
+
+    // Método para criar o banco de dados no MySQL
+    public void CriarBanco(){
+        // O bloco try-with-resources garante que a conexão e o Statement sejam fechados automaticamente.
+        try (
+            Connection conexao = DriverManager.getConnection(URL, USER, PASS);  // Estabelece a conexão com o banco de dados usando a URL, usuário e senha fornecidos.
+            Statement stm = conexao.createStatement()  // Cria um Statement, que permite enviar comandos SQL ao banco de dados.
+        ) {
+            // SQL para criar o banco de dados, caso ele não exista. O comando "CREATE DATABASE IF NOT EXISTS" previne erro se o banco já existir.
+            String sql = "CREATE DATABASE IF NOT EXISTS Hospital";  // Comando SQL que cria o banco "Hospital".
+            
+            // Executa o comando SQL.
+            stm.execute(sql);  // O método execute() executa a instrução SQL no banco de dados.
+
+            // Caso a execução seja bem-sucedida, exibe uma mensagem informando que o banco foi criado.
+            System.out.println("Banco de dados Criado com sucesso!");
+        } catch (SQLException e) {
+            // Caso ocorra algum erro na execução do código, a exceção SQLException será capturada.
+            System.out.println("Erro ao criar o banco.");
+            e.printStackTrace();  // Exibe detalhes da exceção para ajudar na depuração.
         }
+    }
 }
+
 ```
 
 ## Inserindo Informações na Tabela | Com Metodo
