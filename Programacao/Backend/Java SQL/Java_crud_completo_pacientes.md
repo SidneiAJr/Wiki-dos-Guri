@@ -117,42 +117,63 @@ public class criarBanco {
 ## Inserindo Informações na Tabela 
 
 ```java
-import java.sql.*; // Import de Lib de conexção
-import java.util.Scanner;
+import java.sql.*; // Importa as classes necessárias para trabalhar com banco de dados SQL.
+import java.util.Scanner; // Importa a classe Scanner para ler entradas do usuário.
 
 public class inserindoPaciente {
-    final String URL = "jdbc:mysql://localhost:3306/hospital";  // URL do MySQL (sem especificar o banco)
-    final String USER = "root";  // Usuário do MySQL
-    final String PASS = "root";  // Senha do MySQL
+    // Declaração das variáveis de conexão ao banco de dados.
+    final String URL = "jdbc:mysql://localhost:3306/hospital";  // URL do banco MySQL, especificando o nome do banco "hospital".
+    final String USER = "root";  // Usuário para autenticação no MySQL.
+    final String PASS = "root";  // Senha para autenticação no MySQL.
+
     public void Inserir(){
+        // Criação do objeto Scanner para ler a entrada do usuário.
         Scanner entrada = new Scanner(System.in);
+
+        // Solicita ao usuário o nome do paciente.
         System.out.println("Informe Nome: ");
-        String nome = entrada.nextLine();
+        String nome = entrada.nextLine(); // Lê a linha inserida pelo usuário para o nome.
+
+        // Solicita ao usuário a idade do paciente.
         System.out.println("Informe Idade: ");
-        int Idade = entrada.nextInt();
-        entrada.nextLine();
+        int Idade = entrada.nextInt(); // Lê o valor inteiro para a idade.
+
+        entrada.nextLine(); // Limpa o buffer do Scanner para evitar problemas ao ler a próxima linha.
+
+        // Solicita ao usuário o plano do paciente.
         System.out.println("Insira o Plano: ");
-        String plano = entrada.nextLine();
+        String plano = entrada.nextLine(); // Lê a linha inserida pelo usuário para o plano.
+
         /*
-        SQl parametrização
-        o uso de ?  evita sql injection
+        ** SQL Parametrização:
+        A instrução SQL utiliza '?' como placeholders para os valores que serão inseridos. O uso de '?' evita a vulnerabilidade de SQL Injection.
+        Ao usar PreparedStatement, você pode garantir que os valores inseridos são tratados de forma segura.
          */
-        String sql =
-                // Insert into funcionarios (nome) values ('jesus'); from funcionarios ('1'='1');
-                "INSERT INTO pacientes (nome,idade,plano) values (?,?,?)";
-        try(Connection conexao = DriverManager.getConnection(URL,USER,PASS); PreparedStatement stm = conexao.prepareStatement(sql)){
-            //subtituil os parametros da sql
-            stm.setString(1,nome);
-            stm.setInt(2,Idade);
-            stm.setString(3,plano);
-            stm.executeUpdate();
+        String sql = "INSERT INTO pacientes (nome,idade,plano) values (?,?,?)"; // Comando SQL para inserir um paciente na tabela "pacientes".
+
+        try(
+            // Estabelece a conexão com o banco de dados e cria o PreparedStatement para executar o comando SQL.
+            Connection conexao = DriverManager.getConnection(URL, USER, PASS);
+            PreparedStatement stm = conexao.prepareStatement(sql)
+        ) {
+            // Atribui os valores lidos para os parâmetros '?' na instrução SQL.
+            stm.setString(1, nome);   // Substitui o primeiro '?' (nome).
+            stm.setInt(2, Idade);     // Substitui o segundo '?' (idade).
+            stm.setString(3, plano);  // Substitui o terceiro '?' (plano).
+
+            // Executa o comando SQL de inserção no banco de dados.
+            stm.executeUpdate(); // Executa a atualização no banco de dados (inserção).
+
+            // Se a execução for bem-sucedida, exibe uma mensagem de sucesso.
             System.out.println("Paciente Inserido com Sucesso");
 
         } catch (SQLException e) {
+            // Caso ocorra uma exceção durante a execução (por exemplo, problemas com a conexão), exibe a mensagem de erro.
             System.out.println("Erro ao conectar ao banco de dados.");
         }
     }
 }
+
 ```
 
 ## Update com Where | Com metodo:
