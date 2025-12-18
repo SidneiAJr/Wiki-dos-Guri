@@ -1,4 +1,4 @@
-# Consumindo API | Pokedex:
+# Consumindo API | Pokedex | JS :
 
 ## URL da API:
 ```js
