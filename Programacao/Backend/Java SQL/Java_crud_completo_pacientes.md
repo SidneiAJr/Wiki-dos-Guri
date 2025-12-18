@@ -114,7 +114,7 @@ public class criarBanco {
 }
 ```
 
-## Inserindo Informações na Tabela 
+## Inserindo Informações na Tabela | Com Metodo
 
 ```java
 import java.sql.*; // Importa as classes necessárias para trabalhar com banco de dados SQL.
