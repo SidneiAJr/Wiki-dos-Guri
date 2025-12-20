@@ -89,7 +89,6 @@ class Personagem extends ClassePer {
     }
 }
 ```
-# 📘 Explicação pra colocar no GitHub
 ## 🎮 Projeto: Sistema simples de RPG com POO
 
 Este código demonstra conceitos fundamentais de Programação Orientada a Objetos em Java usando personagens de RPG como exemplo.
