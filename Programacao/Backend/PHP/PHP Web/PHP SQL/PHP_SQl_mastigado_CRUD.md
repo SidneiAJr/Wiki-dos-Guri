@@ -210,28 +210,4 @@ $stmt->execute([1]);
 
 ---
 
-## 🧱 O que tu já domina em PHP
 
-✔ CRUD completo
-✔ SQL seguro
-✔ PDO
-✔ Backend raiz
-
-Isso **já é backend profissional**, só falta interface.
-
----
-
-## 🚀 Próximo passo natural
-
-* HTML + PHP (formulário)
-* Separar `db.php`
-* Criar `FuncionarioDAO.php`
-* Ligar com JavaFX via API
-
-Quando quiser:
-
-* Eu transformo isso em **projeto de portfólio**
-* Ou comparo **PHP x Java backend**
-* Ou subo isso pra **MVC simples**
-
-Só chamar 👊
