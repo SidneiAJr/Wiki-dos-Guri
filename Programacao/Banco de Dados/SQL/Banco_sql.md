@@ -1,143 +1,238 @@
-# Exemplo Banco 3:
+# 🧠 Exemplo Banco 3 — SQL explicado passo a passo (bem mastigado)
 
-```SQl
-CREATE database aula07;
-use aula07;
--- Criar tabela clientes
+Este material serve como **base de estudo** para SQL básico/intermediário.
+A ideia é entender **o que cada comando faz**, não só copiar.
+
+---
+
+## 1️⃣ Criando o banco de dados
+
+```sql
+CREATE DATABASE aula07;
+```
+
+🔹 Cria um banco de dados chamado **aula07**.
+
+```sql
+USE aula07;
+```
+
+🔹 Diz ao MySQL: *"tudo que eu fizer agora é dentro desse banco"*.
+
+---
+
+## 2️⃣ Criando a tabela CLIENTES
+
+```sql
 CREATE TABLE clientes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     cidade VARCHAR(50) NOT NULL,
     idade INT NOT NULL CHECK (idade >= 0 AND idade <= 120)
 );
+```
 
--- Criar tabela produtos
+🔍 Quebra por partes:
+
+* `id` → número automático, chave primária
+* `nome` → texto obrigatório
+* `cidade` → texto obrigatório
+* `idade` → número entre 0 e 120 (validação no banco)
+
+👉 **CHECK** evita idade inválida direto no banco.
+
+---
+
+## 3️⃣ Criando a tabela PRODUTOS
+
+```sql
 CREATE TABLE produtos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     categoria VARCHAR(50) NOT NULL,
     preco DECIMAL(10,2) NOT NULL CHECK (preco >= 0)
 );
+```
 
--- Inserir dados na tabela clientes
-INSERT INTO clientes (id, nome, cidade, idade) VALUES
-(1, 'Lucas Fernandes', 'Salvador', 32),
-(2, 'Pedro Cavalcanti', 'Canoas', 50),
-(3, 'Bruno da Cunha', 'Curitiba', 41),
-(4, 'Rafaela da Rocha', 'São Paulo', 36),
-(5, 'Júlia Barros', 'Salvador', 52),
-(6, 'Marcela Ribeiro', 'Canoas', 47),
-(7, 'Renan Costa', 'Porto Alegre', 42),
-(8, 'Ricardo Cavalcanti', 'Curitiba', 56),
-(9, 'Vanessa das Neves', 'Canoas', 54),
-(10, 'Juliana da Cunha', 'Curitiba', 28),
-(11, 'Lucas da Rocha', 'São Paulo', 38),
-(12, 'Carolina Moreira', 'Porto Alegre', 65),
-(13, 'Ana Fernandes', 'São Paulo', 44),
-(14, 'Felipe Martins', 'Canoas', 60),
-(15, 'Gabriela Pereira', 'Curitiba', 41),
-(16, 'André Almeida', 'Salvador', 26),
-(17, 'Eduardo Correia', 'Porto Alegre', 18),
-(18, 'Larissa Correia', 'Curitiba', 39),
-(19, 'Diego Barbosa', 'São Paulo', 58),
-(20, 'Camila Rodrigues', 'Canoas', 23);
+🔍 Aqui entra dinheiro:
 
--- Inserir dados na tabela produtos
-INSERT INTO produtos (id, nome, categoria, preco) VALUES
-(1, 'Celular 49', 'Informática', 544.88),
-(2, 'Camiseta 78', 'Vestuário', 1212.62),
-(3, 'Copo 69', 'Informática', 1459.94),
-(4, 'Gamepad 11', 'Brinquedos', 446.84),
-(5, 'HD 47', 'Brinquedos', 296.51),
-(6, 'Camiseta 7', 'Eletrônicos', 990.37),
-(7, 'Notebook 89', 'Alimentos', 121.96),
-(8, 'Boneco 41', 'Informática', 1283.01),
-(9, 'Celular 15', 'Informática', 881.59),
-(10, 'Mouse 95', 'Informática', 1251.32),
-(11, 'Notebook 64', 'Games', 1226.12),
-(12, 'Fone 83', 'Games', 83.34),
-(13, 'Fone 37', 'Brinquedos', 428.27),
-(14, 'Teclado 77', 'Brinquedos', 1142.89),
-(15, 'Mouse 2', 'Vestuário', 90.01),
-(16, 'HD 79', 'Brinquedos', 1255.95),
-(17, 'Boneco 29', 'Brinquedos', 387.66),
-(18, 'Notebook 5', 'Informática', 765.00),
-(19, 'Teclado 10', 'Eletrônicos', 781.18),
-(20, 'Gamepad 54', 'Games', 274.66);
+* `DECIMAL(10,2)` → 10 dígitos no total, 2 casas decimais
+* `CHECK (preco >= 0)` → preço nunca negativo
 
--- Exercicio 1:
--- a) Liste os nomes e preço dos produtos que custa mais que 200
+---
+
+## 4️⃣ Inserindo dados na tabela CLIENTES
+
+```sql
+INSERT INTO clientes (id, nome, cidade, idade) VALUES (...);
+```
+
+🔹 Insere **vários registros de uma vez**.
+🔹 Cada linha é um cliente.
+🔹 Boa prática para popular banco de testes.
+
+---
+
+## 5️⃣ Inserindo dados na tabela PRODUTOS
+
+```sql
+INSERT INTO produtos (id, nome, categoria, preco) VALUES (...);
+```
+
+🔹 Mesma lógica dos clientes.
+🔹 Cada linha representa um produto.
+
+---
+
+## 6️⃣ SELECT com filtro de preço (> 200)
+
+```sql
 SELECT * FROM produtos
-WHERE preco > 200 ORDER BY
-preco desc;
--- Exercicio 2:
--- a) Mostre apenas as cidades únicas dos clientes cadastrados
+WHERE preco > 200
+ORDER BY preco DESC;
+```
+
+🔹 `WHERE` → filtra
+🔹 `ORDER BY DESC` → do mais caro para o mais barato
+
+---
+
+## 7️⃣ SELECT com DISTINCT (sem repetir cidades)
+
+```sql
 SELECT DISTINCT cidade FROM clientes;
- -- Exercicio 3:
- -- a) Liste os nomes dos produtos que contêm "game" no nome.
+```
+
+🔹 `DISTINCT` remove valores duplicados
+
+---
+
+## 8️⃣ SELECT com LIKE (busca parcial)
+
+```sql
 SELECT nome FROM produtos
 WHERE nome LIKE '%game%';
- -- Exercicio 4:
- -- a) Mostre os 3 produtos mais baratos.
- SELECT * FROM produtos
- ORDER BY PRECO ASC LIMIT 3;
- -- Exercicio 5:
- -- a) Liste os nomes dos clientes que moram em "Porto Alegre" ou "Canoas".
+```
+
+🔹 `%` → qualquer coisa antes ou depois
+🔹 Busca produtos que **contêm** a palavra
+
+---
+
+## 9️⃣ LIMIT (mais baratos)
+
+```sql
+SELECT * FROM produtos
+ORDER BY preco ASC
+LIMIT 3;
+```
+
+🔹 `ASC` → crescente
+🔹 `LIMIT` → limita quantidade de resultados
+
+---
+
+## 🔟 OR (uma condição OU outra)
+
+```sql
 SELECT nome FROM clientes
 WHERE cidade = 'Porto Alegre' OR cidade = 'Canoas';
- -- Exercicio 6:
- -- a)Liste o nome e a cidade dos clientes que moram em Canoas
+```
+
+🔹 Retorna quem mora em **qualquer uma** das cidades
+
+---
+
+## 1️⃣1️⃣ BETWEEN (intervalo)
+
+```sql
 SELECT nome FROM clientes
-WHERE cidade = 'Canoas';
- -- Exercicio 7:
--- a)Mostre todos os clientes com idade entre 30 e 40 anos
-SELECT nome 
-FROM clientes
 WHERE idade BETWEEN 30 AND 40;
- -- Exercicio 8:
- -- a) Liste o nome e preço dos produtos que contenham "Note" no nome.
-SELECT nome FROM produtos
-WHERE nome LIKE '%Note%';
--- Exercicio 9:
--- a) Mostre todos os clientes que moram em São Paulo, Porto Alegre ou Curitiba.
-SELECT nome FROM clientes
-WHERE cidade = 'São Paulo' OR cidade = 'Porto Alegre' OR cidade='Curitiba';
--- Exercicio 10:
--- a) Liste todos os produtos da categoria Games, ordenados do mais caro para o mais barato
-SELECT * 
-FROM produtos
-WHERE categoria = 'Games'
-ORDER BY preco DESC;
--- Exercicio 11:
--- a) Mostre apenas os 5 primeiros produtos mais caros da tabela
-SELECT * 
-FROM produtos
+```
+
+🔹 Inclui 30 e 40
+🔹 Mais legível que usar `>=` e `<=`
+
+---
+
+## 1️⃣2️⃣ ORDER + LIMIT (TOP N)
+
+```sql
+SELECT * FROM produtos
 ORDER BY preco DESC
 LIMIT 5;
--- Exercicio 12:
--- a) Liste os 3 clientes mais jovens (nome, idade e cidade).
-SELECT nome, idade, cidade
-FROM clientes
-ORDER BY idade ASC
-LIMIT 3;
--- Exercicio 13:
--- a) Mostre os produtos com preço menor que 100 reais
-SELECT * from produtos where preco < 100;
--- Exercicio 14:
--- a) Liste nome e categoria dos produtos que custam mais de 1000 reais e sejam da categoria Informática ou Eletrônicos.
-SELECT nome, categoria 
+```
+
+🔹 Top 5 mais caros
+
+---
+
+## 1️⃣3️⃣ AND + OR (condição composta)
+
+```sql
+SELECT nome, categoria
 FROM produtos
 WHERE (categoria = 'Informática' OR categoria = 'Eletrônicos')
-  AND preco > 1000
-ORDER BY preco DESC;
--- Exercicio 15: 
--- a) Mostre apenas as cidades distintas onde há clientes cadastrados.
-SELECT DISTINCT cidade
-FROM clientes;
--- Exercicio 16:
--- a) Liste todos os clientes que não moram em São Paulo.
-SELECT * FROM clientes where not cidade = 'São Paulo';
- -- Exercicio 17:
- -- a) Mostre todos os produtos cujo preço não esteja entre 200 e 800 reais.
- SELECT * FROM produtos where not (preco BETWEEN 200 AND 800);
+  AND preco > 1000;
 ```
+
+🔹 Parênteses evitam lógica errada
+🔹 Primeiro decide a categoria, depois o preço
+
+---
+
+## 1️⃣4️⃣ NOT (negação)
+
+```sql
+SELECT * FROM clientes
+WHERE NOT cidade = 'São Paulo';
+```
+
+🔹 Retorna todos **menos** São Paulo
+
+---
+
+## 1️⃣5️⃣ NOT BETWEEN
+
+```sql
+SELECT * FROM produtos
+WHERE NOT (preco BETWEEN 200 AND 800);
+```
+
+🔹 Tudo fora do intervalo
+
+---
+
+## 🧠 O que esse exercício ensina
+
+✔ CREATE DATABASE / TABLE
+✔ INSERT em massa
+✔ SELECT
+✔ WHERE
+✔ ORDER BY
+✔ LIMIT
+✔ LIKE
+✔ BETWEEN
+✔ DISTINCT
+✔ AND / OR / NOT
+
+👉 Isso aqui é **SQL raiz**, base pra qualquer backend.
+
+---
+
+## 📌 Onde isso se encaixa na tua Wiki
+
+📂 **Banco de Dados / SQL Básico**
+
+Esse material está perfeito para:
+
+* Ensino
+* Revisão
+* Entrevista técnica
+* Base pra PHP / Java / Node
+
+Se quiser, no próximo passo posso:
+
+* criar versão **com JOIN**
+* criar versão **com subquery**
+* ou ligar isso direto com **PHP PDO**
