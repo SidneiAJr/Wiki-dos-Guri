@@ -220,19 +220,4 @@ WHERE NOT (preco BETWEEN 200 AND 800);
 
 ---
 
-## 📌 Onde isso se encaixa na tua Wiki
 
-📂 **Banco de Dados / SQL Básico**
-
-Esse material está perfeito para:
-
-* Ensino
-* Revisão
-* Entrevista técnica
-* Base pra PHP / Java / Node
-
-Se quiser, no próximo passo posso:
-
-* criar versão **com JOIN**
-* criar versão **com subquery**
-* ou ligar isso direto com **PHP PDO**
