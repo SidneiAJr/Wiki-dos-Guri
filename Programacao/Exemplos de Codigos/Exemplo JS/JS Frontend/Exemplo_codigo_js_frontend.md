@@ -266,4 +266,4 @@ pedeTudo()
 
 ---
 
-📌 **Documento ideal para wiki pessoal / GitHub**
+
