@@ -244,19 +244,3 @@ Isso **já é base de backend Java**.
 
 ---
 
-## 🚀 Próximo passo natural
-
-Quando tu quiser subir o nível:
-
-* Separar classe `Conexao`
-* DAO (FuncionarioDAO)
-* JavaFX chamando isso
-* MySQL + interface gráfica
-
-Se quiser, no próximo passo eu:
-
-* Refatoro isso pra **DAO padrão mercado**
-* Ligo com **JavaFX**
-* Ou transformo em **projeto de portfólio**
-
-Só manda 👊
