@@ -198,33 +198,5 @@ Implementação real dos métodos definidos na interface.
 
 ---
 
-## 🧠 Resumo mental (cola rápida)
 
-```
-Interface → contrato
-Classe abstrata → base
-extends → herança
-super() → construtor pai
-@Override → implementação obrigatória
-new → cria objeto
-```
 
----
-
-## 📌 O que esse projeto demonstra bem
-
-* Estrutura correta de POO
-* Separação de responsabilidades
-* Código limpo e didático
-* Excelente material para portfólio e estudo
-
----
-
-## ✅ Próximos passos naturais (se quiser evoluir)
-
-* Encapsular atributos (`private` + getters)
-* Criar subclasses (`Guerreiro`, `Mago`)
-* Criar sistema de batalha
-* Usar listas (`ArrayList<Personagem>`)
-
-Esse código está **perfeito para wiki pessoal e revisão futura**.
