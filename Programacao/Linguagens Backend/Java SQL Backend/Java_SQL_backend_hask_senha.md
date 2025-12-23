@@ -209,6 +209,4 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 
 ---
 
-Se você quiser, posso fazer **uma versão final já pronta inteira do Login + Cadastro + BCrypt**, pronta pra rodar no NetBeans, tudo organizado, sem mexer com JTextField dentro da classe de verificação. Isso deixa o código mais limpo e reutilizável.
 
-Quer que eu faça?
