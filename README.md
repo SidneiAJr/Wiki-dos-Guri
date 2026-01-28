@@ -1,76 +1,117 @@
-<h1 align="center">📘  Wiki dos Guri</h1>
-
-### `Não sou vendedor de curso, sou apenas alguém que quer compartilhar o que aprendeu gratuitamente. O objetivo é ajudar, ensinar, e proporcionar a outros o mesmo acesso ao conhecimento que eu tive.`
-
-## Propósito do Repositório:
-
-`Este repositório tem como objetivo guardar e compartilhar o conhecimento adquirido ao longo da vida, com o intuito de ajudar outras pessoas que buscam aprendizado em diversas áreas. Se você está em busca de informações, curiosidades ou quer explorar temas variados, fique à vontade para navegar e aprender. Espero que este conteúdo seja útil para sua jornada de aprendizado, assim como foi para a minha.`
-
-
-## `Linguagens Disponiveis`:
+<h1 align="center">📘 Wiki dos Guri</h1>
 
 <p align="center">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" height=60px width=60px/>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"height=60px width=60px />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg"height=60px width=60px />
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg"  height=60px width=60px />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"height=60px width=60px />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"height=60px width=60px />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"height=60px width=60px />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg"height=60px width=60px />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" height=60px width=60px/>
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cobol/cobol-original.svg"height=60px width=60px  />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"height=60px width=60px />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"height=60px width=60px />
-     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg"height=60px width=60px />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"height=60px width=60px />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"height=60px width=60px />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"height=60px width=60px  />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg"height=60px width=60px /> 
+  <em>
+    Não sou vendedor de curso.  
+    Sou apenas alguém que quer compartilhar, de forma gratuita, o que aprendeu ao longo da vida.
+  </em>
+</p>
+
+<p align="center">
+  O objetivo é ajudar, ensinar e proporcionar a outras pessoas o mesmo acesso ao conhecimento que eu tive.
 </p>
 
 ---
 
+## 🎯 Propósito do Repositório
 
-## 🎓Minhas Formações
+Este repositório foi criado com o objetivo de **guardar, organizar e compartilhar conhecimento** adquirido ao longo da vida.
 
-| Curso                              | Período         |
-|------------------------------------|-----------------|
-| ADS (Análise e Desenvolvimento de Sistemas) | 2018 a 2020     |
-| SGI (Segurança da Informação)      | 2021 a 2023     |
-| Técnico em Informática             | 2014 a 2016     |
-| Técnico em Desenvolvimento de Sistemas | 2025 a 2026 |
+Aqui você encontrará conteúdos voltados para aprendizado, curiosidades e exploração de diferentes áreas da tecnologia e do conhecimento em geral.  
+Se você busca aprender, revisar conceitos ou simplesmente explorar novos temas, **sinta-se à vontade**.
 
+> Espero que este conteúdo seja útil na sua jornada de aprendizado, assim como foi e continua sendo na minha.
 
-## 📚Cursos Realizados:
+---
 
-| Curso                              | Período         
-|------------------------------------|-----------------|
-|  Curso PHP do Zero a Maestria - PHP | 2024 
-|  Curso de CyberSegurança | 2024  
-|  Curso Introdução a c++ |2024 
-|  Curso HTML JS CSS | 2024 
-|  Curso Java & Java Web | 2024 
-|  Introdução a Economia |2024
-| Introdução a Bitcoin|2024
-| Introdução a C#|2024
-| Desevolvedor de Jogos Unity|2024
-| Desevolvedor Web |2025
+## 💻 Linguagens e Tecnologias Disponíveis
 
-## ⁉️Formações Planejadas
+<p align="center">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cobol/cobol-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" height="60" width="60"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg" height="60" width="60"/>
+</p>
 
-| Curso                              | 
-|------------------------------------|
-| Pos: Economia
-| Pos: Cybersegurança     | 
-| Pos : Fisica            | 
+---
 
-***Aqui você encontra de tudo um pouco — desde Hardware e Computação***
+## 🎓 Minhas Formações
 
-## Sumario:
+| Formação                                   | Período       |
+|-------------------------------------------|---------------|
+| Análise e Desenvolvimento de Sistemas     | 2018 – 2020   |
+| Segurança da Informação                   | 2021 – 2023   |
+| Técnico em Informática                    | 2014 – 2016   |
+| Técnico em Desenvolvimento de Sistemas    | 2025 – 2026   |
 
-- [Programação](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Programacao)
-- [Experiencia de TI](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Experiencia_TI)
-- [Computação](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Computacao)
-- [Formações TI](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Forma%C3%A7%C3%B5es%20TI)
-- [Automação](https://github.com/SidneiAJr/Albertool)
+---
+
+## 📚 Cursos Realizados
+
+| Curso                                   | Ano  |
+|-----------------------------------------|------|
+| PHP do Zero à Maestria                  | 2024 |
+| Cybersegurança                          | 2024 |
+| Introdução a C++                        | 2024 |
+| HTML, CSS e JavaScript                 | 2024 |
+| Java & Java Web                         | 2024 |
+| Introdução à Economia                  | 2024 |
+| Introdução ao Bitcoin                  | 2024 |
+| Introdução ao C#                       | 2024 |
+| Desenvolvedor de Jogos com Unity       | 2024 |
+| Desenvolvedor Web                      | 2025 |
+
+---
+
+## 🎯 Formações Planejadas
+
+| Formação |
+|----------|
+| Pós-graduação em Economia |
+| Pós-graduação em Cybersegurança |
+| Pós-graduação em Física |
+
+---
+
+## 🧩 Conteúdo do Repositório
+
+Aqui você encontra **de tudo um pouco**, incluindo:
+
+- Programação
+- Hardware
+- Computação
+- Experiência em TI
+- Automação
+- Estudos e anotações gerais
+
+---
+
+## 📑 Sumário
+
+- 📌 [Programação](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Programacao)
+- 🧠 [Experiência em TI](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Experiencia_TI)
+- 💻 [Computação](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Computacao)
+- 🎓 [Formações em TI](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Forma%C3%A7%C3%B5es%20TI)
+- ⚙️ [Automação](https://github.com/SidneiAJr/Albertool)
+
+---
+
+## ☕ Informações Finais
+
+Se este conteúdo te ajudou de alguma forma e quiser **pagar um café**, fique à vontade 😄  
+Mais importante que isso: **bons estudos!**
+
+Grato pela atenção 🤝
