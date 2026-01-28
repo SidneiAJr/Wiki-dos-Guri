@@ -218,10 +218,3 @@ public class Main {
 * **Cadastro de alunos**: com `AlunoDao` e `PreparedStatement`
 * **Leitura de alunos**: com `SELECT` no banco
 
----
-
-✔ Código limpo e organizado
-✔ Proteção contra SQL Injection
-✔ Boa estrutura de classes
-
----
