@@ -225,10 +225,3 @@ public class Main {
 ✔ Boa estrutura de classes
 
 ---
-
-Se quiser melhorar mais, posso te ajudar a:
-
-* 🚀 Validar entradas do usuário
-* 📈 Melhorar a performance e manutenibilidade
-* 🧰 Organizar em pacotes profissionais
-* 🧪 Adicionar mais funcionalidades (ex: atualização, deletação de alunos)
