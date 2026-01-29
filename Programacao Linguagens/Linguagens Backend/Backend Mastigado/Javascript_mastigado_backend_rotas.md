@@ -230,9 +230,4 @@ app.listen(port,()=>{
 * ✔️ MySQL seguro com parâmetros
 * ✔️ Separação de responsabilidades
 
-Se quiser, no próximo passo posso:
 
-* refatorar pra **MVC**
-* converter pra **async/await**
-* adicionar **bcrypt + JWT**
-* ou integrar com **React/Vue** 🚀
