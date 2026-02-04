@@ -233,14 +233,5 @@ Isso é a mesma lógica usada em:
 
 ---
 
-# Próximo nível (se quiser evoluir)
-
-* Interface para Model (Repository)
-* Injeção de dependência
-* Async / Await
-* API REST
-* Entity Framework
-
----
 
 
