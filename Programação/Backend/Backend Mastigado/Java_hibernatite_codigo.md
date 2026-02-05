@@ -249,14 +249,4 @@ Isso é **base sólida de dev Java backend**.
 
 ---
 
-## 🎯 Próximo nível
 
-Depois disso, o próximo passo é:
-
-* DTO
-* Pagination
-* Fetch Join
-* Performance
-* Microserviços
-
-Tudo em cima de Hibernate.
