@@ -1,5 +1,9 @@
 # 🎮 JavaFX + JDBC + MySQL (CRUD) — Versão Mastigada
 
+## Exemplo: Tela
+
+<img width="1171" height="630" alt="image" src="https://github.com/user-attachments/assets/19cfbccb-b1da-44dc-914c-9782ea8ea35c" />
+
 Este documento vai **quebrar o teu projeto de cadastro de jogos** em partes pequenas, explicando **o que faz cada parte**, **pra que serve** e **o que pode dar errado**. Tudo na vibe raiz, sem frescura.
 
 ---
