@@ -24,6 +24,24 @@ Se você busca aprender, revisar conceitos ou simplesmente explorar novos temas,
 
 ---
 
+## 💻 Códigos & Explicações
+
+Os códigos presentes neste repositório foram desenvolvidos por mim durante:
+
+Técnico em Informática
+
+Técnico em Desenvolvimento de Sistemas
+
+Graduação em Análise e Desenvolvimento de Sistemas
+
+Parte do conteúdo foi reconstruída após a perda de arquivos antigos.
+Para isso, utilizei ferramentas de IA como apoio na reestruturação e organização dos códigos, sempre revisando, compreendendo e ajustando cada implementação.
+
+Todo o material aqui publicado reflete meu processo de aprendizado, evolução técnica e consolidação de conhecimento ao longo dos anos.
+
+
+---
+
 ## 💻 Linguagens e Tecnologias Disponíveis
 
 <p align="center">
@@ -96,16 +114,6 @@ Aqui você encontra **de tudo um pouco**, incluindo:
 - Experiência em TI
 - Automação
 - Estudos e anotações gerais
-
----
-
-## 📑 Sumário
-
-- 📌 [Programação](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Programacao)
-- 🧠 [Experiência em TI](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Experiencia_TI)
-- 💻 [Computação](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Computacao)
-- 🎓 [Formações em TI](https://github.com/SidneiAJr/Wiki-dos-Guri/tree/main/Forma%C3%A7%C3%B5es%20TI)
-- ⚙️ [Automação](https://github.com/SidneiAJr/Albertool)
 
 ---
 
