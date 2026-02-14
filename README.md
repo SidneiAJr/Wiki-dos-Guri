@@ -42,21 +42,6 @@ Todo o material aqui publicado reflete meu processo de aprendizado, evolução t
 
 ---
 
-## 🚀 Áreas de Estudo
-
-Backend (PHP, Java, Node.js)
-
-Estrutura MVC
-
-Banco de Dados (MySQL)
-
-Fundamentos de Segurança da Informação
-
-Organização de código e arquitetura
-
-E Mais
-
----
 
 ## 💻 Linguagens e Tecnologias Disponíveis
 
