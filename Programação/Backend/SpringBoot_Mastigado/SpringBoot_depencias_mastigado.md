@@ -1,4 +1,4 @@
-# Exemplo de Dependências Java sem HydroRS
+# Exemplo de Dependências Java 
 
 ## 1️⃣ Spring Boot Starter Data JPA
 
